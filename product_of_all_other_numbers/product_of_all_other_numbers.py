@@ -3,9 +3,23 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
+    total = 1
+    for num in arr:
+        total *= num
+    result = [total / x for x in arr]
+    return result
 
-    pass
+#without division implementation
+# def product2_of_all_other_numbers(arr):
+#     if not arr:
+#         return 1
+#     if len(arr) == 1:
+#         return arr[0]
+#     new_arr = []
+#     for i in range(len(arr)):
+#         new_arr.append(product2_of_all_other_numbers(arr[0:i]) * product2_of_all_other_numbers(arr[(i + 1):]))
+    
+#     return new_arr
 
 
 if __name__ == '__main__':
